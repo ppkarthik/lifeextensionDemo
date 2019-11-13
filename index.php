@@ -1113,7 +1113,7 @@ stjude.$ready.push(function($){
     
     	<li class="grid-item"><a id="amz-link" href="https://www.stjude.org/donate/donate-to-st-jude.html#amz" class="tabbable" tabindex="11">AmazonPay</a></li>
 
-        <li class="grid-item"><div id="venmo"> <img src="blue_venmo_button_active_320x48.svg" height="75" width="325" align="left"></img> <a id="venmo" class="tabbable" tabindex="12"></a></div></li>
+        <li class="grid-item"><div id="venmo"> <img src="blue_venmo_button_active_320x48.svg" height="75" width="350" align="left"></img> <a id="venmo" class="tabbable" tabindex="12"></a></div></li>
    
 </ul>
 <div id="cc" class="tabContents">

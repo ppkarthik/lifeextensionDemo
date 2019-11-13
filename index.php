@@ -3200,7 +3200,7 @@ function handleVenmoError(err) {
 function handleVenmoSuccess(payload) {
   // Send the payment method nonce to your server, e.g. by injecting
   // it into your form as a hidden input.
-  alert(payload);
+  console.log(payload);
   console.log('Got a payment method nonce:', payload.nonce);
   console.log('Venmo user:', payload.details.username);
   document.querySelector('#nonce').value = payload.nonce;

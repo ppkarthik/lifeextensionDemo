@@ -1,0 +1,37 @@
+.suggest{display:none;position:absolute;top:50%;left:5%;right:5%;font-size:.9em;text-align:center;margin-top:-100px;background:#fff;border-radius:3px;background-clip:padding-box;border:solid 1px #ccc;box-shadow:0 1px 1px 0 #333;overflow:hidden;z-index:999;pointer-events:all;padding:40px 20px 10px 20px}
+.suggest.show{display:block}
+.suggest.open{height:200px}
+.suggest label{display:block;font-weight:700;padding:1em 1.2em;background:#e6e6e6;cursor:pointer}
+.suggest label:hover{background:#ccc}
+.suggest .suggest-actions{width:100%}
+.suggest .suggest-actions a{font-size:.9em;line-height:1.2em;cursor:pointer}
+.suggest .suggest-actions a:hover{color:#333;background-color:#f5f5f5;color:#1874dc}
+.suggest .suggest-actions a span{display:block}
+.good,.oops{display:none;position:absolute;top:22px;right:16px;color:#5ca132;font-size:1.1em}
+.oops{color:#eb4e36}
+.rec-action .tip.up{bottom:0}
+.rec-action .tip.show{bottom:50px;right:-20px}
+.icon-adduser:before,.icon-userlist:before{position:relative;top:1px;margin-right:3px}
+.icon-userlist:before{margin-right:6px}
+span.rec-count{display:block;color:#b3b3b3;font-size:.8em;padding:0}
+span.rec-count #recipient-count{color:#666}
+.refused{display:block;color:#666;font-size:.75em;text-align:center;line-height:1.3em;padding:.4em 1em;margin:1em auto;max-width:440px}
+.refused i{position:relative;top:1px;display:inline-block;margin-right:6px}
+#notify{float:left;width:auto}
+#recipients.modal-dialog-wide tr.suggestion span.refused,#recipients.modal-dialog-wide tr.unverifiable span.refused{color:#eb4e36 !important}
+#tributeAddressWrapper{position:relative}
+#tributeAddressWrapper .suggest{left:40px;right:80px;max-width:540px}
+#suggestionButton{display:block;font-size:1.14rem;text-align:left;cursor:pointer}
+.suggest_button{color:#1874dc;border:1px solid;border-color:#1874dc;line-height:inherit;cursor:pointer;transition:all .25s ease-in-out;padding:.85rem 2rem;font-size:1.14rem;line-height:4em}
+.suggest .suggest-actions a.active{background-color:#1874dc;color:#fff;border-bottom:solid 2px;border-bottom-color:#1874dc}
+.grids-2-column{overflow:hidden;padding:0;list-style:none;max-width:655px;margin:0}
+.grids-2-column .grids-item{float:left;width:calc(48% - 50px);margin:0 10px 10px 0;padding:.6em 1.2em;border:1px solid;border-color:#1874dc;border-radius:5px}
+#suggestion span.suggestedAddress{font-size:1.5em;font-size:1em;margin-bottom:15px;margin-top:10px;float:left}
+span#notRecognizedHeader.suggestionHeader{font-size:2em;text-align:left;float:left}
+span#suggestedAddressvalid{font-size:.9em;line-height:1.2em;padding:.6em 1.2em;cursor:pointer;border:1px solid;border-color:#1874dc;border-radius:5px}
+span#suggestedAddressvalid.suggestedAddress.active{background-color:#1874dc;color:#fff}
+span#selectValidAddressHeader{font-size:2em;text-align:left;float:left}
+span#selectValidAddressOption{font-size:.9em;text-align:left;float:left}
+span#addressEntered.suggestedAddress{font-size:1.2em;text-align:left;float:left;line-height:1.2em;padding:.6em 1.2em;cursor:pointer;border:1px solid;border-color:#1874dc;margin-top:inherit;border-radius:5px}
+@media only screen and (max-width:700px){.grids-2-column .grids-item{width:80%}
+}

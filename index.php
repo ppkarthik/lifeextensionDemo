@@ -3204,10 +3204,20 @@ function handleVenmoSuccess(payload) {
   alert("Got a payment method nonce");
   // Display the Venmo username in your checkout UI.
   console.log('Venmo user:', payload.details.username);
+  document.querySelector('#nonce').value = payload.nonce;
+  document.querySelector('#payload').value = payload;
   alert("Venmo user:");
 }
 </script>
-
+<form id="checkout" action="/checkout" method="POST">
+  <input type="hidden" id="nonce" name="payment_method_nonce" />
+  <input type="hidden" id="deviceData" name="device_data" />
+  <button id="submitButton">Complete Payment</button>
+</form>
+<?php
+	echo(document.querySelector('#nonce').value);
+	echo(document.querySelector('#payload').value);
+?>
 
 <noscript><img src="https://www.stjude.org/akam/11/pixel_163fd6b1?a=dD0yNWNiODFkYzJiZTFkNWU4OTIzMDVhMTQ2ZWQ0OTdlNzA0ZTM2YWEzJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript><script type="text/javascript">var _cf = _cf || []; _cf.push(['_setFsp', true]); _cf.push(['_setBm', true]); _cf.push(['_setAu', '/assets/66cda3711550cb09bce2841909ba']);</script><script type="text/javascript" src="./Donate to St. Jude and help kids fight cancer - St. Jude Children’s Research Hospital_files/66cda3711550cb09bce2841909ba"></script>
 <script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"5152059",alt:"bing ad"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script><script>_satellite["__runScript7"](function(event, target) {

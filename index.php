@@ -3125,6 +3125,7 @@ braintree.client.create({
     // At this point, you should access the deviceData value and provide it
     // to your server, e.g. by injecting it into your form as a hidden input.
     alert("Got D Data");
+    document.querySelector('#deviceData').value = dataCollectorInstance.deviceData;
     console.log('Got device data:', dataCollectorInstance.deviceData);
   });
   console.log("Before Entering Venmo Create instance");
@@ -3208,15 +3209,13 @@ function handleVenmoSuccess(payload) {
   console.log('Got a payment method nonce:', payload.nonce);
   console.log('Venmo user:', payload.details.username);
   document.querySelector('#nonce').value = payload.nonce;
-  document.querySelector('#payload').value = payload;
-  alert("Venmo user:");
 }
 </script>
 
 <script>
 	console.log("Test printing");
 	console.log(document.querySelector('#nonce').value);
-	console.log(document.querySelector('#payload').value);
+	console.log(document.querySelector('#deviceData').value);
 </script>
 
 <noscript><img src="https://www.stjude.org/akam/11/pixel_163fd6b1?a=dD0yNWNiODFkYzJiZTFkNWU4OTIzMDVhMTQ2ZWQ0OTdlNzA0ZTM2YWEzJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript><script type="text/javascript">var _cf = _cf || []; _cf.push(['_setFsp', true]); _cf.push(['_setBm', true]); _cf.push(['_setAu', '/assets/66cda3711550cb09bce2841909ba']);</script><script type="text/javascript" src="./Donate to St. Jude and help kids fight cancer - St. Jude Children’s Research Hospital_files/66cda3711550cb09bce2841909ba"></script>

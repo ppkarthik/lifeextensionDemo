@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<body>
 <?php
 require 'braintree-php-4.5.0/lib/Braintree.php';
 $gateway = new Braintree_Gateway([
@@ -18,9 +21,11 @@ $gateway = new Braintree_Gateway([
         ],
     ]);
 
-    header('Content-type: application/json');
-    print json_encode($result);
     echo($result);
     var_dump($result);
 
 ?>
+
+</body>
+</html>
+

@@ -7,10 +7,8 @@ $gateway = new Braintree_Gateway([
     'privateKey' => '487037d54eef8df77798d8efc32bd3fd'
 ]);
 
-if (isset($_GET['nonce'])) {
-    $nonceFromClient = $_GET['payment_method_nonce'];
-if (isset($_GET['nonce'])) {
-    $deviceData = $_GET['device_data'];
+    $nonceFromClient = $_POST['payment_method_nonce'];
+    $deviceData = $_POST['device_data'];
     $result = $gateway->transaction()->sale([
         'amount' => '100.00',
         'paymentMethodNonce' => $nonceFromClient,
@@ -22,5 +20,7 @@ if (isset($_GET['nonce'])) {
 
     header('Content-type: application/json');
     print json_encode($result);
+    echo($result);
+    var_dump($result);
 
 ?>

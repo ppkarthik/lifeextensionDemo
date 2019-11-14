@@ -1,6 +1,4 @@
 <?php
-
-<?php
 require 'braintree-php-4.5.0/lib/Braintree.php';
 $gateway = new Braintree_Gateway([
     'environment' => 'sandbox',
@@ -13,19 +11,8 @@ if (isset($_GET['nonce'])) {
     $nonceFromClient = $_GET['payment_method_nonce'];
 if (isset($_GET['nonce'])) {
     $deviceData = $_GET['device_data'];
-
-    $result = $gateway->customer()->create([
-        'firstName' => 'Cory',
-        'lastName' => 'Becker',
-        'company' => 'PayPal',
-        'paymentMethodNonce' => $nonceFromClient
-    ]);
-
-    // Get payment method token from customer (or use the customer_id)
-    $paymentMethodToken = $result->customer->paymentMethods[0]->token;
-
     $result = $gateway->transaction()->sale([
-        'amount' => '200.00',
+        'amount' => '100.00',
         'paymentMethodNonce' => $nonceFromClient,
         'deviceData' => $deviceData
         'options' => [

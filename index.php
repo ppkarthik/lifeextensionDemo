@@ -146,7 +146,11 @@ var headerText = "Make a donation and honor someone you love";
 
 
 
-
+<form id="checkout" action="/checkout" method="POST">
+  <input type="hidden" id="nonce" name="payment_method_nonce" />
+  <input type="hidden" id="deviceData" name="device_data" />
+  <button id="submitButton">Complete Payment</button>
+</form>
 
 		
 			
@@ -3208,11 +3212,7 @@ function handleVenmoSuccess(payload) {
   alert("Venmo user:");
 }
 </script>
-<form id="checkout" action="/checkout" method="POST">
-  <input type="hidden" id="nonce" name="payment_method_nonce" />
-  <input type="hidden" id="deviceData" name="device_data" />
-  <button id="submitButton">Complete Payment</button>
-</form>
+
 <script>
 	console.log("Test printing");
 	console.log(document.querySelector('#nonce').value);

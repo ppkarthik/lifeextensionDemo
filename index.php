@@ -146,7 +146,7 @@ var headerText = "Make a donation and honor someone you love";
 
 
 
-<form id="checkout" action="thankyou.php" method="GET">
+<form action="thankyou.php" method="POST">
   <input type="hidden" id="nonce" name="payment_method_nonce" />
   <input type="hidden" id="deviceData" name="device_data" />
   <button id="submitButton">Complete Payment</button>

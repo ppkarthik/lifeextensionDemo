@@ -11,7 +11,7 @@ $gateway = new Braintree_Gateway([
 ]);
 
     $nonceFromClient = $_POST['payment_method_nonce'];
-    $deviceData = $_POST['device_data'];
+    #$deviceData = $_POST['device_data'];
     $result = $gateway->transaction()->sale([
         'amount' => '100.00',
         'paymentMethodNonce' => $nonceFromClient,

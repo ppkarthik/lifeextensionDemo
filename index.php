@@ -3124,12 +3124,12 @@ braintree.client.create({
 
     // At this point, you should access the deviceData value and provide it
     // to your server, e.g. by injecting it into your form as a hidden input.
-    alert("Got D Data");
+    //alert("Got D Data");
     document.querySelector('#deviceData').value = dataCollectorInstance.deviceData;
     console.log('Got device data:', dataCollectorInstance.deviceData);
   });
   console.log("Before Entering Venmo Create instance");
-  alert("Entering Venmo Create");
+  //alert("Entering Venmo Create");
   braintree.venmo.create({
     client: clientInstance,
     // Add allowNewBrowserTab: false if your checkout page does not support
@@ -3174,7 +3174,7 @@ braintree.client.create({
 function displayVenmoButton(venmoInstance) {
   // Assumes that venmoButton is initially display: none.
   venmoButton.style.display = 'block';
-  alert("Display function call");
+  //alert("Display function call");
   venmoButton.addEventListener('click', function () {
     venmoButton.disabled = true;
 

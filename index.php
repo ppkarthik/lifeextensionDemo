@@ -3136,7 +3136,7 @@ braintree.client.create({
     // relaunching in a new tab when returning from the Venmo app. This can
     // be omitted otherwise.
     profileId: '1953896702662410263',
-    allowNewBrowserTab: false
+    allowNewBrowserTab: true
   }, function (venmoErr, venmoInstance) {
     if (venmoErr) {
       console.error('Error creating Venmo:', venmoErr);

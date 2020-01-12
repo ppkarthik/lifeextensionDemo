@@ -301,7 +301,7 @@ Your available LE Rewards <strong data-bind="text:DisplayAvailableLeRewardDollar
 <div>
 <div class="radio">
 <label class="pt-2" data-bind="visible: HasPaypalOption">
-<input type="radio" data-bind="value: &#39;PP&#39;, checked: SelectedPaymentValue,click: paymentMethodChange.bind($data, &#39;PP&#39;)" name="PaymentMethodSelection" value="PP">
+<input type="radio" id="ppCheck" data-bind="value: &#39;PP&#39;, checked: SelectedPaymentValue,click: paymentMethodChange.bind($data, &#39;PP&#39;)" name="PaymentMethodSelection" value="PP">
 <img alt="Paypal" src="./Payment_files/paypal-logo.webp" style="margin-top: -8px;">
 </label>
 </div>

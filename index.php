@@ -294,7 +294,7 @@ Your available LE Rewards <strong data-bind="text:DisplayAvailableLeRewardDollar
 <div class="radio">
 <label class="pt-2">
 <input type="radio" data-bind="value: &#39;NCC&#39;, checked: SelectedPaymentValue,click: paymentMethodChange.bind($data, &#39;NCC&#39;)" name="PaymentMethodSelection" value="NCC">
-<img alt="Payment Options" src="./Payment_files/payment-options.webp" style="margin-top: -8px;">
+<img alt="Payment Options" src="./Payment_files/payment-options.png" "height"="40" width="220" style="margin-top: -8px;">
 </label>
 </div>
 </div>

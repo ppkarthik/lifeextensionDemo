@@ -1,0 +1,426 @@
+
+<!-- saved from url=(0123)https://payflowlink.paypal.com/?SECURETOKEN=IdjMRgmC19kGF3vLIGIMljAN4&SECURETOKENID=3e549f5fc7a64b468f26f198d24a408d&nojump -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body style=""><html:xhtml>
+
+
+  
+    <title>Choose a way to pay</title>
+    <link media="screen" rel="stylesheet" type="text/css" href="./cmnCore.css">
+    <link media="print" rel="stylesheet" type="text/css" href="./cmnPrint.css">
+    <link rel="stylesheet" type="text/css" href="./pflPayments.css">
+    <!--[if gt IE 6]><link media="screen" rel="stylesheet" type="text/css" href="/stylesheet/cmnIe7.css"><![endif]-->
+    <!--[if lte IE 6]><link media="screen" rel="stylesheet" type="text/css" href="/stylesheet/cmnIe6.css"><![endif]-->
+    <!--[if lt IE 6]><link media="screen" rel="stylesheet" type="text/css" href="/stylesheet/cmnIe5.css"><![endif]-->
+
+    <script type="text/javascript" src="./global.js"></script>
+    <script type="text/javascript" src="./widgets.js"></script>
+
+
+    <meta name="ROBOTS" content="NOINDEX">
+	<meta http-equiv="CACHE-CONTROL" content="NO-STORE,NO-CACHE">
+	<meta http-equiv="PRAGMA" content="NO-CACHE">
+	<meta http-equiv="EXPIRES" content="0">
+
+    <!-- // Removed - not meant for release - sraj<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-STORE">
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+	-->
+    <style type="text/css">
+      body{background-color:transparent;}
+      #lightBoxDiv_mask{height:610px !important}
+      #lightBoxDiv{display:none}
+      #iframeContainer input.primary{background-color:FFAA00;background-image:none;color:333333;}
+      .shadowContent{border-color:#FFFFFF;border-width:1px; border-style:solid}
+      #iframeContainer div.miniController .headline{margin:0 10px;padding-bottom:5px;border-bottom:1px solid #eee;color:#336699}
+      div.miniContainer div.rowPayNow span.payNow,div.miniContainer div.rowPayLater span.payLater,div.miniContainer div.dottedLine,span.smallHelpText{color:333333;}
+      .shadowBox{background-color:transparent !important;border-width:1px !important}
+      .helpText{color:333333;}
+
+      .payeasy {color:333333;}
+
+      .show {color:333333;}
+
+      .text {color:333333;}
+	   p.group span.field input{border-color:}
+       #iframeContainer, div.miniContainer div.dottedLine span.orText{background-color:}
+	</style>
+    <script type="text/javascript">
+        PAYPAL.namespace("merchant.pfl.payment");
+        PAYPAL.merchant.pfl.payment = {
+          init : function() {
+            YAHOO.util.Event.addListener('CARDTYPE', 'change', this.showHideSwitchSoloFields);
+            YAHOO.util.Event.onAvailable('switchsoloFields', this.showHideSwitchSoloFields);
+            YAHOO.util.Event.addListener('btn_pay_cc', 'click', this.displayLightBox);
+          },
+            displayLightBox:function(e){/* Added for the story - US90906 - Display lightbox - Start */
+                var elTarget=YAHOO.util.Event.getTarget(e);
+                YAHOO.util.Event.preventDefault(e);
+                var lightboxId="lightBoxDiv";
+                var lightBoxIdObj=document.getElementById(lightboxId);
+                var lightbox=new PAYPAL.util.Lightbox(lightBoxIdObj);
+                if(lightBoxIdObj){
+                    YAHOO.util.Dom.removeClass(lightBoxIdObj,"accessAid");
+                    lightbox.show();
+                    if(navigator.appName == "Microsoft Internet Explorer"){
+                        var parentObj = document.getElementById('lightBoxDiv_c');
+                        var chldObj = parentObj.getElementsByTagName("div");
+                        chldObj[2].style.height="103px";
+                    }
+                    var formId = this.form.id;
+                    setTimeout("PAYPAL.merchant.pfl.payment.delaySubmit('"+formId+"')",2000);
+                }
+            },
+            delaySubmit:function(formId){
+                document.getElementById(formId).submit();
+            },/* Added for the story - US90906 - Display lightbox - End */
+          showHideSwitchSoloFields : function(){
+            if(YAHOO.util.Dom.get('CARDTYPE')){
+              if(YAHOO.util.Dom.get('CARDTYPE').value=='SO')
+                YAHOO.util.Dom.addClass('switchsoloFields', 'show');
+              else
+                YAHOO.util.Dom.removeClass('switchsoloFields', 'show');
+            }
+          }
+        }
+        PAYPAL.merchant.pfl.payment.init();
+
+        function popitup(url) {
+        newwindow=window.open(url,'name','height=500,width=800,scrollbars=1');
+        if (window.focus) {newwindow.focus()}
+        return false;
+        }
+      </script>
+    
+    
+      <div id="iframeContainer">
+      
+
+
+
+
+
+
+
+
+      
+        
+      
+      <div class="shadowBox">
+        <div class="shadowContent">
+          <div class="miniController">
+            <div class="headline">
+              <span class="arrowicon"><strong>›</strong></span>
+              <span class="bartitle">
+                <strong>
+                  
+                    
+                      Enter credit card details
+                    
+                    
+                  
+                </strong>
+              </span>
+            </div>
+          </div>
+          <div class="miniContainer">
+            <form method="post" id="formPayment" name="form_payment" action="https://payflowlink.paypal.com/processTransaction.do" class="edit">
+              <input type="hidden" name="subaction">
+              <div id="fieldsCC">
+                <div id="fieldrowCCNumber">
+                  <p class="group cc">
+                    <label for="cc_number"><span class="show">Card number</span></label>
+                    <span class="field">
+                
+                            
+                            
+                                <input type="text" id="cc_number" name="CARDNUM" autocomplete="off" value="" autofocus="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                            
+                
+                    </span>
+                  </p>
+                </div>
+                
+                  <div id="fieldrowCCLogo">
+                    <p class="group ccSprite">
+                      <span class="field">
+                            
+                                <span class="AX cclogo"></span>
+                            
+                                <span class="DS cclogo"></span>
+                            
+                                <span class="MC cclogo"></span>
+                            
+                                <span class="VI cclogo"></span>
+                            
+                      </span>
+                    </p>
+                  </div>
+                
+                
+                <div id="fieldrowCCExpDateText">
+                  <p class="helpTextBottomMargin group ccSprite">
+                    <span class="field">
+                      <span class="helpText">mm</span>
+                      <span class="helpText">yy</span>
+                    </span>
+                  </p>
+                </div>
+                
+                <div id="fieldrowCCExpDate">
+                  <p class="group helpTextTopMargin">
+                    <label for="expdate_month"><span class="show">Expiration date</span></label>
+                    <span class="field">
+                        
+                            
+                            
+                                  <input type="text" id="expdate_month" maxlength="2" class="small" name="EXPMONTH" autocomplete="off" value="">&nbsp;<span class="text">/</span>
+                                  <input type="text" id="expdate_year" maxlength="2" class="small" name="EXPYEAR" autocomplete="off" value="">
+                            
+                        
+                    </span>
+                  </p>
+                </div>
+                <div id="fieldrowCCCsc">                
+                  <p class="group">
+                      
+                          
+                          
+                          	
+                    			<label for="cvv2_number">
+                      				<span class="show">CSC</span>                      				
+                      				
+                                    <span title="For American Express, it&#39;s the four digits on the front of the card. For any other card, it&#39;s the last three digits in the signature area  on the back of your card." class="autoTooltip">
+                                        <span class="text">What is this ? </span>
+                                    </span>
+                                </label>
+                    			
+                                	
+                    					
+                    					<span class="field">
+                      						<input type="text" id="cvv2_number" class="small" maxlength="4" name="CVV2" value="" autocomplete="off">
+                    					</span>
+                    				                                    
+                    			
+                    		
+                          
+                      
+                  </p>
+                  
+                </div>
+
+                <span id="switchsoloFields" class="hide">
+                  <div id="fieldrowCCStartDateText">
+                    <p class="helpTextBottomMargin group">
+                      <span class="field">
+                        <span class="helpText">mm</span>
+                        <span class="helpText">yy</span>
+                      </span>
+                    </p>
+                  </div>
+                  <div id="fieldrowCCStartDate">
+                    <p class="group">
+                      <label for="startdate_month"> <span class="show">Start date</span></label>
+                      <span class="showOncard">(if shown on card)</span>
+                        <span class="field">
+                        <input type="text" id="startdate_month" maxlength="2" class="small" name="startdate_month" autocomplete="off" value=""> /
+                        <input type="text" id="startdate_year" maxlength="2" class="small" name="startdate_year" autocomplete="off" value="">
+                      </span>
+                    </p>
+                  </div>
+                  <div id="fieldrowCCIssueno">
+                    <p class="group">
+                      <label for="issue_number">
+                        <span class="show">Issue number</span>
+                      </label>
+                      <span class="showOncard">(if shown on card)</span>
+                      <span class="field">
+                        <input type="text" id="issue_number" class="small" maxlength="4" name="issue_number" autocomplete="off" value="">
+                      </span>
+                    </p>
+                  </div>
+                </span>
+              </div>
+              <!-- Fields from the user request -->
+              <input name="METHOD" type="hidden" value="C">
+              <input name="PAYMETHOD" type="hidden" value="C">
+              <input type="hidden" name="FIRST_NAME" value="">
+              <input type="hidden" name="LAST_NAME" value="">
+              <input name="template" type="hidden" value="">
+              <input name="ADDRESS" type="hidden" value="2678 Villa Cortona Way">
+              <input name="CITY" type="hidden" value="San Jose">
+              <input name="STATE" type="hidden" value="CA">
+              <input name="ZIP" type="hidden" value="95125">
+              <input name="COUNTRY" type="hidden" value="US">
+              <input name="PHONE" type="hidden" value="">
+              <input name="EMAIL" type="hidden" value="">
+              <input type="hidden" name="SHIPPING_FIRST_NAME" value="">
+              <input type="hidden" name="SHIPPING_LAST_NAME" value="">
+              <input name="ADDRESSTOSHIP" type="hidden" value="">
+              <input name="CITYTOSHIP" type="hidden" value="">
+              <input name="STATETOSHIP" type="hidden" value="">
+              <input name="ZIPTOSHIP" type="hidden" value="">
+              <input name="COUNTRYTOSHIP" type="hidden" value="">
+              <input name="PHONETOSHIP" type="hidden" value="">
+              <input name="EMAILTOSHIP" type="hidden" value="">
+              <input name="TYPE" type="hidden" value="A">
+              
+
+
+
+
+
+
+    <input name="SHIPAMOUNT" type="hidden" value="0.00">
+
+<input name="TAX" type="hidden" value="0.00">
+
+
+
+
+
+
+    <input type="hidden" name="VERBOSITY" value="HIGH">
+
+
+
+    <input name="COMMENT1" type="hidden" value="84215580">
+
+
+    <input name="COMMENT2" type="hidden" value="16182080">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input name="flag3dSecure" type="hidden" value="">
+
+    <input name="CURRENCY" type="hidden" value="USD">
+
+<!--modified for PPSCR01467629.-->
+
+    <input name="STATE" type="hidden" value="CA">
+
+<!--apatnaik@PPSCR01496773-->
+
+              <input type="hidden" id="swipeData" name="swipeData" value="0"> 
+              
+
+
+
+
+    
+        <input type="hidden" name="SECURETOKEN" value="IdjMRgmC19kGF3vLIGIMljAN4">
+        <input type="hidden" name="SECURETOKENID" value="3e549f5fc7a64b468f26f198d24a408d">
+        <input type="hidden" name="PARMLIST" value="">
+        <input type="hidden" name="MODE" value="">
+        <input name="CSRF_TOKEN" type="hidden" value="88eb18a0-55ff-46b3-8d40-fda0ac131c97">
+    
+    
+
+              
+
+
+
+<input name="referringTemplate" type="hidden" value="minlayout">
+              <p class="buttons">
+                
+                  
+                  
+                    
+                      
+                        <input type="submit" id="btn_pay_cc" name="pay.x" value="Verify Card" class="button primary" onclick="this.disable=true" pa-marked="1">
+                      
+                      
+                    
+                  
+                
+                
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!--  Added for the story - US90906 - Display lightbox - Start -->
+    <div id="lightBoxDiv">
+        <p>Please wait - transaction being processed ....</p>
+        <img src="./icon_animated_prog_18wx18h.gif" alt="Loading">
+    </div>
+    <!--  Added for the story - US90906 - Display lightbox - End -->
+    
+        
+    
+
+
+
+<!--
+SiteCatalyst Code
+Copyright 1997-2005 Omniture, Inc.
+More info available at http://www.omniture.com
+-->
+
+
+<script type="text/javascript" src="./pp_jscode_080706.js"></script>
+<script type="text/javascript">
+<!--
+/* SiteCatalyst Variables */
+	if (typeof s != "undefined")
+    {
+            s.eVar3="103827";
+            s.eVar4="936510";
+            s.eVar9=";S;P;C;";
+            s.prop10="US";
+            s.prop50="en";
+            s.pageName="Payflow:PaymentPage:TemplateC";
+
+        /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+		var s_code=s.t();if(s_code)document.write(s_code);
+        if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+     }
+    //-->
+</script>
+<noscript>
+    <img src="//paypal.112.2O7.net/b/ss/paypalglobal/1/H.6--NS/0?pageName=NonJavaScript" height="1" width="1" border="0" alt="" />
+</noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst Code -->
+
+<!-- FPTI code -->
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+<script src="./pa.js"></script>
+<script>
+(function(){
+if(typeof PAYPAL.analytics != "undefined"){
+    PAYPAL.core = PAYPAL.core || {};
+    PAYPAL.core.pta = PAYPAL.analytics.setup({data:'pgrp=Payflow:PaymentPage:TemplateC&ptnr=103827&lcse=936510&fmxa=;S;P;C;&rsta=en&ccpg=US',
+        url:'\/\/t.paypal.com\/ts'});
+}
+}());
+</script>
+<noscript>
+	<img src='https://t.paypal.com/ts?nojs=1&pgrp=Payflow:PaymentPage:TemplateC&ptnr=103827&lcse=936510&fmxa=;S;P;C;&rsta=en&ccpg=US' alt="" height="1" width="1" border="0">
+</noscript>
+<!-- end FPTI  code -->
+
+  
+
+</html:xhtml><div id="autoTooltip0" class="module euddpanel overlay tt" style="z-index: 16; left: 77px; top: 171px; opacity: 1; visibility: hidden;"><div class="body"></div></div><iframe id="_yuiResizeMonitor" style="visibility: visible; width: 10em; height: 10em; position: absolute; top: -124px; left: -124px; border-style: none; border-width: 0px; opacity: 0;" src="./saved_resource.html"></iframe><script crossorigin="anonymous" src="./miconfig.js"></script></body></html>

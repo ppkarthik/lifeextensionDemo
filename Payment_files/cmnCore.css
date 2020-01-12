@@ -1,0 +1,343 @@
+/*
+	Verisign-PayPal Core Style Sheet
+	Version 2.5 - 10 April 2010
+*/
+
+/* Global Element Styles */
+body {margin:0 5px; padding:0; color:#333; background:#fff; font:75%/normal Arial, Helvetica, sans-serif;}
+
+h1, h2, h3, h4, h5, h6 {margin:0; line-height:1em;}
+h1 {color:#326698; font-size:1.5em;}
+h2 {color:#333; font-size:1.333em;}
+h3 {color:#C68038; font-size:1.167em;}
+h4 {color:#666; font-size:1em;}
+h5, h6 {font-size:1em;}
+
+a {color:#084482; text-decoration:underline;}
+a img {border:0;}
+
+p {margin:1em 0;}
+ul, ol, dl {margin:1em 0; padding:0;}
+dt {margin:0; padding:0;}
+li, dd {margin:0 0 0 1.7em;}
+blockquote {margin: 1em;}
+
+em {font-style:italic;}
+strong {font-weight:bold;}
+dfn, var {font-style:normal;}
+code, kbd, samp {font:1em "Courier New", Courier, monospace;}
+q:before, q:after {content:"";}
+cite {font-style:normal;}
+cite span {display:block;}
+abbr, acronym {border:none; text-decoration:none; cursor:pointer;}
+
+form {margin:0; padding:0;}
+fieldset {margin:0; border:0; padding:0;}
+legend {padding:0; font-weight:bold; color: #333;}
+label {display:block;}
+input, select, textarea {border:1px solid #adc2d6; font:1.1em Arial, Helvetica, sans-serif;}
+input, textarea {padding:2px;}
+textarea {vertical-align:top;}
+input[type=checkbox], input[type=radio], input[type=hidden] {border:none; padding:0; margin-right:0.25em;}
+input.checkbox, input.radio, input.hidden, label.checkbox input, label.radio input {border:none; padding:0;}
+
+/* Legacy button code */
+button, input.button {width:auto !important; margin-right:10px; border:1px solid #bfbfbf; border-right-color:#908d8d; border-bottom-color:#908d8d; padding:1px .5em; background:#e1e1e1 url(/images/Global_sprite.png) repeat-x 0px -841px; color:#000;}
+button:active, input.button:active {border:1px solid #908d8d; border-right-color:#afafaf; border-bottom-color:#afafaf;}
+button:hover, input.button:hover {cursor:pointer;}
+button.primary, input.primary {border:1px solid #d5bd98; border-right-color:#935e0d; border-bottom-color:#935e0d; background:#ffa822 url(/images/Global_sprite.png) repeat-x 0px -1041px;}
+button.primary:active, input.primary:active {border:1px solid #935e0d; border-right-color:#d5bd98; border-bottom-color:#d5bd98;}
+button[disabled="disabled"] {border:1px solid #ccc; background:#eee; color:#b3b3b3;}
+button[disabled="disabled"]:hover {cursor:default;}
+button.disabled, input.button.disabled {border:1px solid #ccc; background:#eee; color:#b3b3b3;}
+button.disabled:hover, input.button.disabled:hover {cursor:default;}
+button.mini, input.mini, a.mini {font-size:.9em;}
+
+a.button {width:auto; border:1px solid #bfbfbf; border-right-color:#908d8d; border-bottom-color:#908d8d; padding:2px .6em; background:#e1e1e1 url(/images/Global_sprite.png) repeat-x 0px -841px; color:#000; font-weight:normal !important; text-decoration:none;}
+a.button:active {border:1px solid #908d8d; border-right-color:#afafaf; border-bottom-color:#afafaf;}
+a.button:hover {cursor:pointer;}
+a.button.primary {background:#ffa822 url(/images/Global_sprite.png) repeat-x 0px -1041px; border:1px solid #d5bd98; border-right-color:#935e0d; border-bottom-color:#935e0d;}
+a.button.primary:active {border:1px solid #935e0d; border-right-color:#d5bd98; border-bottom-color:#d5bd98;}
+/* End legacy button code */
+
+/* Standard updated current buttons */
+/*span.button {display:inline-block; padding-left:7px;}
+span.button, span.button input, span.button button, span.button a {width:auto; height:24px; overflow:visible; background:url(/images/en_US/pui/core/btn_sprite.png) no-repeat 0 -136px;}
+span.button a {display:inline-block; padding-top:5px; padding-left:4px;}
+span.button input, span.button button, span.button a {margin:0; padding-right:12px; background-position:right -136px; background-color:#fff; border:0; color:#333; font:italic bold .925em Verdana, Arial; text-transform:uppercase; text-decoration:none;}
+span.button input:hover, span.button button:hover {cursor:pointer;}
+span.button.active {background-position:0 -171px; }
+span.button.active input, span.button.active button, span.button.active a {background-position:right -170px; }
+span.button.primary {background-position:0 0;}
+span.button.primary input, span.button.primary button, span.button.primary a {background-position:right 0;}
+span.button.primary.active {background-position:0 -34px;}
+span.button.primary.active input, span.button.primary.active button, span.button.primary.active a {background-position:right -34px;}
+span.button.alternate {background-position:0 -68px;}
+span.button.alternate input, span.button.alternate button, span.button.alternate a {background-position:right -68px;}
+span.button.alternate.active {background-position:0 -102px;}
+span.button.alternate.active input, span.button.alternate.active button, span.button.alternate.active a {background-position:right -102px;}
+span.button.disabled {background-position:0 -204px;}
+span.button.disabled input, span.button.disabled button {background-position:right -204px;}
+span.button.disabled input:hover, span.button.disabled button:hover {cursor:default;}*/
+/* End standard updated current buttons */
+/*Start brand button rollback 64.0*/
+span.button {margin:0 10px 0 0;border-width:1px;border-color:#bfbfbf; border-right-color:#908d8d; border-bottom-color:#908d8d;}
+span.button input {padding:1px 0.5em;background:#e1e1e1 url(/images/Global_sprite.png) repeat-x 0px -841px; color:#000;}
+span.button, span.button input, span.button button, span.button a {width:auto !important;}
+span.button input:hover, span.button button:hover {cursor:pointer;}
+span.button.primary input, span.button.primary button, span.button.primary a {margin:0px;border:1px solid #d5bd98; border-right-color:#935e0d; border-bottom-color:#935e0d; margin-left:0; background:#ffa822 url(/images/Global_sprite.png) repeat-x 0px -1041px;}
+span.button.disabled {border:1px solid #ccc; background:#eee; color:#b3b3b3;}
+span.button.disabled input, span.button.disabled button {border:1px solid #ccc; background:#eee; color:#b3b3b3;}
+span.button.disabled input:hover, span.button.disabled button:hover {cursor:default;}
+span.button.mini, input.mini, a.mini {margin-left:4px;}
+span.button.mini input {font-size:.9em;}
+/*End brand button rollback 64.0*/
+
+table {border-collapse:collapse;}
+caption {}
+th {}
+td {}
+hr {display:none;}
+
+/* Page Structure: Wrappers */
+#page {position:relative; width:760px; margin:0 auto;}
+#stdpage {margin:0 auto;position:relative;width:940px;text-align:left;}
+#content { clear:both; margin-top:1.5em; /*overflow:auto; */ }
+#stdpage {position:relative; width:940px; margin:0 auto;}
+
+/* Re-usable containers */
+#page .layout2 div.col {width:369px;}
+#page .layout2a div.first, #page .layout2c div.last {width:180px;}
+#page .layout2a div.last, #page .layout2c div.first {width:560px;}
+#page .layout2b div.first, #page .layout2d div.last {width:218px;}
+#page .layout2b div.last, #page .layout2d div.first {width:522px;}
+#page .layout3 div.col {width:242px;}
+#page .layout3 div.first {margin-right:12px;}
+
+#page .sideposleft .layout2 div.col, #page .sideposright .layout2 div.col {width:275px;}
+#page .sideposleft .layout2a div.last, #page .sideposright .layout2a div.last {width:370px;}
+#page .sideposleft .layout2b div.last, #page .sideposright .layout2b div.last {width:332px;}
+#page .sideposleft .layout2c div.first, #page .sideposright .layout2c div.first {width:370px;}
+#page .sideposleft .layout2d div.last, #page .sideposright .layout2d div.last {width:218px;}
+#page .sideposleft .layout3 div.col, #page .sideposright .layout3 div.col {width:180px;}
+
+#stdpage .layout2 div.col {width:460px;}
+#stdpage .layout2a div.first, #stdpage .layout2c div.last {width:220px;}
+#stdpage .layout2a div.last, #stdpage .layout2c div.first {width:700px;}
+#stdpage .layout2b div.first, #stdpage .layout2d div.last {width:280px;}
+#stdpage .layout2b div.last, #stdpage .layout2d div.first {width:640px;}
+#stdpage .layout2e div.first, #stdpage .layout2f div.last {width:320px;}
+#stdpage .layout2e div.last, #stdpage .layout2f div.first {width:600px;}
+#stdpage .layout3 div.col {width:300px;}
+#stdpage .layout3 div.first {margin-right:20px;}
+
+#stdpage .sideposleft .layout2 div.col, #stdpage .sideposright .layout2 div.col {width:340px;}
+#stdpage .sideposleft .layout2a div.last, #stdpage .sideposright .layout2a div.last {width:460px;}
+#stdpage .sideposleft .layout2b div.last, #stdpage .sideposright .layout2b div.last {width:400px;}
+#stdpage .sideposleft .layout2c div.first, #stdpage .sideposright .layout2c div.first {width:460px;}
+#stdpage .sideposleft .layout2d div.last, #stdpage .sideposright .layout2d div.last {width:400px;}
+#stdpage .sideposleft .layout3 div.col, #stdpage .sideposright .layout3 div.col {width:220px;}
+
+/* Page Structure: Modules */
+#footer {clear:both; padding:2em 9em 1em 9em; color:#999; font-size:.9em; text-align:center;}
+#footer img {vertical-align:middle;}
+#footer ul {margin:.7em 0; list-style-type:none;}
+#footer ul li {display:inline; margin:0; border-right:1px solid #999; padding-left:.4em;}
+#footer ul li.first {background:none;}
+#footer ul li.last {border-right:0 none;}
+#footer ul li a {margin-right:.5em; white-space:nowrap;}
+#footer p {margin:1em 0;}
+
+/* Reusable Containers */
+.footnotes {clear:both; padding-top:.5em; font-size:.9em;}
+.footnotes ul {margin:0; list-style-type:none;}
+.footnotes ul li {margin:.2em; padding-left:1em; text-indent:-.7em;}
+
+/* Commonly Used Classes */
+.nonjsAlert {margin:1em; border:1px solid #f00; padding:.5em; color:#f00; text-align:center;}
+.accessAid {display:block !important; position:absolute !important; top:0 !important; left:-500em !important; overflow:hidden !important; text-indent:-9999em !important; line-height:0 !important; width:1px !important; height:1px !important;}
+.hide {display:none !important;}
+.show {display:block !important;}
+.clear {clear:both !important;}
+.textright {text-align:right !important;}
+.textcenter {text-align:center !important;}
+.textleft {text-align:left !important;}
+
+a.footnote {border:none; text-decoration:none;}
+
+/* YUI/PUI Widgets */
+/* Panels and Lightbox */
+.overlay {display:block; position:absolute;}
+.mask {display:none; position:absolute; top:0; left:0; z-index:0; background-color:#fff; opacity:.80; -moz-opacity: 0.8; filter:alpha(opacity=80);}
+.panel-container {position:absolute; z-index:15; visibility:hidden; overflow:visible; width:440px; background-color:transparent;}
+.panel-container.shadow {padding:0; background-color:transparent;}
+.panel-container.shadow .underlay {position:absolute; top:3px; left:3px; z-index:0; visibility:inherit; width:100%; height:100%; background-color:#000; opacity:.30; -moz-opacity: 0.3; filter:alpha(opacity=30);}
+.panel {position:relative; top:0; left:0; z-index:16; visibility:hidden; overflow:hidden; border:1px solid #369; border-collapse:separate; padding:30px 20px 0 20px; background:#fff url(/images/en_US/pui/lightbox/bg.gif) left bottom repeat-x; color:#333; font:12px/normal Arial, Helvetica, sans-serif;}
+.lightbox .panel .header, .lightbox .panel .header * {margin:0; padding:0; background-color:#fff; font-size:1.1em; font-weight:bold;}
+.lightbox .panel .header * {padding-bottom:.3em; background:url(/images/en_US/pui/lightbox/hdr_bg.gif) bottom left repeat-x; color:#c88039; font-size:1.2em;}
+.lightbox .panel .body {overflow:hidden; margin-bottom:20px;}
+.lightbox .panel .body p {margin:1em 0}
+.lightbox .panel .close {position:absolute; top:5px; right:5px; z-index:6; visibility:inherit; width:15px; height:15px; margin:0; padding:0; background-repeat:no-repeat; cursor:pointer;}
+.lightbox .panel .close.nonsecure {background-image:url(/images/en_US/pui/lightbox/close.gif);}
+.lightbox .panel .close.secure {background-image:url(/images/en_US/pui/lightbox/close.gif);}
+.lightbox .panel .body .buttons {text-align:right;}
+.lightbox .panel .footer {padding:8px 0 12px 0; color:#757575; font-size:11px;}
+.lightbox .panel .footer .paypal {display:block; float:left; width:49px; height:15px; margin-right:.5em; background:url(/images/en_US/pui/lightbox/logo.gif) 0 0 no-repeat;}
+.lightbox .panel .footer .paypal span {display:block; position:absolute; top:0; left:-500em; width:1px; height:1px; overflow:hidden; text-indent:-9999em; line-height:0;}
+.lightbox .panel .footer .secure {margin-bottom:4px; padding-left:15px; background:url(/images/en_US/pui/lightbox/logo.gif) 2px 50% no-repeat;}
+.lightboxMarkup {display:none;}
+
+/* Tooltips and Balloon Callouts */
+.autoTooltip, .balloonControl {cursor: pointer; color: #369; border-bottom: 1px dotted #369; margin-left: 0.7em; font-size: 0.9em; text-decoration: none;}
+
+.tt {z-index:16; width:250px; margin:0; padding:0; line-height:15px;}
+.tt .header {position:absolute; top:-999px; left:-999px;}
+.tt .body {padding:5px;}
+.balloonCallout .body {padding:10px 15px;}
+.ttPosUnder {padding:13px 0 0 0; background:url(/images/en_US/pui/scr/tooptip_top_left.gif) left top no-repeat;}
+.ttPosUnder .body {border:1px solid #666; border-top-width:0; padding:12px 17px 10px 8px; background:#ffffe5;}
+.ttPosOver {padding:0 0 13px 0; background: url(/images/en_US/pui/scr/tooltip_bottom_left.gif) left bottom no-repeat;}
+.ttPosOver .body {border:1px solid #666; border-bottom-width:0; padding:8px 17px 12px 8px; background:#ffffe5;}
+
+.balloon {z-index:16; width:250px; margin:0; padding:0; line-height:15px;}
+.balloon .panel {border:none;}
+.balloon .header {position:absolute; top:-999px; left:-999px;}
+.balloon .body {padding:5px;}
+.balloon .body {padding:10px 15px;}
+.balloon .posUnder {padding:13px 0 0 0; background:url(/images/en_US/pui/scr/tooltip_sprite.gif) -500px top no-repeat;}
+.balloon .posUnder .body {border:1px solid #666; border-top-width:0; padding:12px 17px 10px 8px; background:#ffffe5;}
+.balloon .posOver {padding:0 0 13px 0; background:url(/images/en_US/pui/scr/tooltip_sprite.gif) 0 bottom no-repeat;}
+.balloon .posOver .body {border:1px solid #666; border-bottom-width:0; padding:8px 17px 12px 8px; background:#ffffe5;}
+
+/* Message Boxes */
+div.messageBox { font-size: 12px; margin: 0 0 10px 0; border: 1px solid #fc0; padding: 12px 40px 0 12px; background-repeat: no-repeat; background-position: 20px 14px; background-color: #ffc; width: auto; min-height: 48px; _height: 48px; }
+div.messageBox.res-center-critical { background-image: url(/images/en_US/alert_critical.gif); color: #000; padding-left: 80px; }
+div.messageBox.res-center-non-critical { background-image: url(/images/en_US/icon_noncritalert.gif); color: #000; padding-left: 80px; }
+div.messageBox.notification { background-image: url(/images/en_US/icon_notification.gif); background-color: #eff7fe; border-color: #83a8cc; color: #000; padding-left: 80px; }
+div.messageBox.confirmation { background-image: url(/images/en_US/icon_confirmation.gif); background-color: #fafff1; border-color: #a9d260; color: #000; padding-left: 80px; }
+div.messageBox.error { background-image: url(/images/en_US/icon_critalert.gif); background-color: #ffc; border-color: #fc0; color: #c60000; padding-left: 80px; }
+div.messageBox.alert { background-image: url(/images/en_US/icon_noncritalert.gif); background-color: #ffc;	border-color: #fc0;	color: #000; padding-left: 80px; }
+div.messageBox p { margin: 0 0 10px 0 !important; line-height: 1.5em; }
+div.messageBox ul, div.messageBox ol { margin: 0 0 10px 10px; padding: 0; line-height: 1.5em; }
+
+/* Harmony additions shared among resources */
+
+/* Form elements */
+/* TODO: Remove the extra ones and use only the 'group' selector */
+form fieldset.multi p {float:left; margin:0 1em 0 0;}
+form fieldset.multi legend {font-weight:normal;}
+form p.group span.fieldDivider {font-size: 1.3em; font-weight: bold; padding-left: 0.3em;}
+p.fieldRow, p.group {margin-bottom: 1em;}
+p.fieldRow:after, p.group:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+p.fieldRow span.inputText input, p.group span.field input {width: 19.17em;}
+p.fieldRow span.inputText select, p.group span.field select {width: auto;}
+p.fieldRow label, p.group label {display: block; padding-bottom: 2px;}
+p.fieldRow span.help, p.group span.help, fieldset.group span.help {display: block; font-size: 0.9em; margin: 0.1em 0;}
+p.fieldRow span.help, p.fieldRow span.optional, p.group span.help, p.group span.optional, fieldset.group span.help, fieldset.multi span.help {color: #777; font-size: 0.9em;}
+fieldset.multi span.help, fieldset.multi span.optional, legend.label span.optional {color: #777; font-size: 0.9em;}
+p.fieldRow span.inputText .tiny, p.group span.field .tiny, .multi span.field .tiny {width: 2.5em;}
+p.fieldRow span.inputText .small, p.group span.field .small, .multi span.field .small {width: 3.75em;}
+p.fieldRow span.inputText .petite, p.group span.field .petite, .multi span.field .petite {width: 5em;}
+p.fieldRow span.inputText .medium, p.group span.field .medium, .multi span.field .medium {width: 8.33em;}
+p.fieldRow span.inputText select.fixed, p.group span.field select.fixed {width: 19.73em;}
+/* End Form elements */
+
+/* Styles for field highlighting */
+.multi.attention .field input, .multi.attention .field select, .multi.attention .field textarea,
+.group.attention .field input, .group.attention .field select, .group.attention .field textarea { background-color: #ffffe5;}
+
+/* Styles for Edit Layout */
+form.edit input.text, form.edit select {width:200px;}
+form.edit textarea {width:200px; height:4em;}
+form.edit *.group {position:relative;}
+form.edit p.group label {float:left; width:180px; text-align:right;}
+form.edit p.group span.optional {display:block;}
+form.edit p.group span.autoTooltip {position:absolute; top:.4em; left:410px; width:145px; text-align:left;}
+form.edit p.group.help span.autoTooltip {top:1.7em;}
+form.edit p.group span.help {display:block; padding-left:1.7em; margin-left:19em;}
+form.edit p.group span.field {display:block; margin-left:16.8em;}
+form.edit legend {position:relative; width:180px;}
+form.edit legend span.label, form.edit legend span.optional, form.edit legend span.autoTooltip {position:absolute; width:180px; text-align:right;}
+form.edit legend span.optional {top:1.4em;}
+form.edit legend span.autoTooltip {top:2.8em;}
+form.edit fieldset.multi p *, form.edit fieldset.multi p.group span.field {width:auto; margin-left:0;}
+form.edit fieldset.multi p.first {margin-left:16.8em;}
+form.edit fieldset.group span.help {padding-left:20px; margin-left:181px;}
+form.edit fieldset.group div {margin-left:200px;}
+form.edit p.buttons {margin-left:201px;}
+
+/* Styles for Error Layouts */
+form.error span.help {display:block; margin:.1em 0; color:#808080; font-size:.9em;}
+form *.group.error label span.autoTooltip, form *.multi.error label span.autoTooltip {top: 1.6em;}
+form.error span.optional {color:#808080; font-size:.9em;}
+form.error p label, form.error span.help, form.error span.field, form.error legend, form.error fieldset div, form.error fieldset.error legend { padding-left: 20px; }
+form .combo .group .field.anchored, form .multi .group .field.anchored {padding-left: 0;}
+/* form.error p.error label, form.error .error span.help, form.error .error span.field, form.error .error legend, form.error .error div {padding-left:20px; _margin-left:20px;}  */
+form.error p.error label, form.error fieldset.error legend, form.error p.error span.help, form.error fieldset.group.error span.help, form.error fieldset.multi.error span.help {color:#c00;}
+form.error .error span.help {background: transparent url(/images/en_US/pui/form_error.png) no-repeat scroll 2px -1px;}
+form.error fieldset.combo legend, form.error fieldset p.staticValue {padding-left: 20px;}
+
+/* Popups */
+body.popup {padding: 20px; margin: 0; width: auto;}
+body.popup #header {height: 4.2em;}
+body.popup #header img {top: 0;}
+body.popup #title .printLink {float: right; margin-top: 15px;}
+body.popup .footerAction {padding-top: 20px; text-align: right;}
+body.popup .printLink, body.popup .closer {text-decoration: underline; float: right; display: block; cursor: pointer;}
+
+#rosetta {border:none; position:absolute; top:40px; left:505px; z-index:11; width:250px; text-align:right;}
+#rosetta legend {display:block; position:absolute; top:0; left:-500em; width:1px; height:1px; overflow:hidden; text-indent:-9999em; line-height:0;}
+#rosetta label {display:none;}
+#rosetta button {border:none; padding:0; background:none; vertical-align:top;}
+
+/* Tabbed Cardstack */
+.cardstack, .cardstack .card {margin:1em 0;}
+.cardstack ol.tabs {z-index:1; position:relative; overflow:auto; margin:0 0 -1px 0; list-style-type:none;}
+.cardstack ol.tabs li {float:left; margin:.4em 0 0 5px; border:1px solid #ccc; padding:.4em .9em; background:#ddd url(/images/en_US/tab_bg.gif) top left repeat-x;}
+.cardstack ol.tabs li a {text-decoration:none;}
+.cardstack ol.tabs li a:hover, .cardstack ol.tabs li a:active {text-decoration:underline;}
+.cardstack ol.tabs li a span {display:block; margin-top:1px; color:#666; font-size:1em; text-decoration:none !important;}
+.cardstack ol.tabs li.top {margin-top:0; border-bottom:1px solid #fff; padding-top:.8em; background:#fff;}
+.cardstack ol.tabs li.top a {color:#333; font-weight:bold; text-decoration:none; cursor:default;}
+.cardstack.vertical ol.tabs {float:left; width:20%;}
+.cardstack.vertical ol.tabs li {float:none; margin:0; border:none; border-top:1px solid #fff; border-bottom:1px solid #ccc; padding:.45em .9em .65em .6em; background:none;}
+.cardstack.vertical ol.tabs li a {color:#083772; font-size:1.167em;}
+.cardstack.vertical ol.tabs li a span {font-size:.9em;}
+.cardstack.vertical ol.tabs li.top {border:none; padding:.55em .9em .55em .6em; background:#fff;}
+.cardstack.vertical ol.tabs li.top a {color:#333;}
+.cardstack.vertical ol.tabs li.top span {color:#333; font-weight:normal;}
+.cardstack.vertical ol.tabs li.first, .cardstack.vertical ol.tabs li.next {border-top:none;}
+.cardstack.vertical ol.tabs li.last, .cardstack.vertical ol.tabs li.previous {border-bottom:none;}
+.cardstack.stacked h2 {position:absolute; top:0; left:-500em; width:1px; height:1px; overflow:hidden; text-indent:-9999em; line-height:0;}
+.cardstack.stacked h4 {margin-left:1em;}
+.cardstack.stacked .card, .cardstack.stacked .header {position:absolute; top:0; left:-999em; margin:0;}
+.cardstack.stacked .card.top {position:relative; top:0; left:0; border:1px solid #ccc;}
+.cardstack.stacked .top .body p, .cardstack.stacked .top .body div, .cardstack.stacked .top .body ul, .cardstack.stacked .top .body ol {margin:.9em;}
+.cardstack.stacked.vertical {overflow:hidden; border:1px solid #ccc; padding:5px; background:#e8f1fa;}
+.cardstack.stacked.vertical .card {float:left; width:80%;}
+.cardstack.stacked.vertical .card.top {float:left; border:none; background:#fff;}
+.cardstack.stacked.vertical .card.top .header {position:static !important; height:.01em; overflow:hidden;}
+.cardstack.stacked.vertical .top .body {padding:0 .1em;}
+
+.cardstack.stacked .top .body p {margin:0; margin-left:1em; margin-bottom:1em;}
+.cardstack.stacked .top .body {padding-top:1em;}
+
+/* inlineMessage */
+div.inlineMessage {width:auto; margin:10px 0; padding:0 2px 0 26px; background-position:5px 0; background-repeat:no-repeat;}
+div.inlineMessage.info {background-image:url(/images/en_US/pui/icon_sysinfo_16x16.gif);}
+div.inlineMessage p{padding-bottom:1px;}
+.error #inlineMessage p{margin-left: 25px; }
+.error #inlineMessage {background-position: 25px 0;}
+/*to display a button as link*/
+span.buttonAsLink input {
+    background-color: transparent;
+    border: medium none;
+    color: #084482;
+    cursor: pointer;
+    height: 1.4em;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    text-align: left;
+    text-decoration: underline;
+}

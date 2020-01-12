@@ -19,6 +19,10 @@ $clientToken = $gateway->clientToken()->generate();
 <title>DemoPayment</title>
 <link rel="icon" href="https://mycart.lifeextension.com/Images/favicon.ico">
 <script type="text/javascript" async="" src="./Payment_files/Dynamic.aspx"></script><script type="text/javascript" async="" src="./Payment_files/Static.aspx"></script><script async="" src="./Payment_files/tag.js"></script><script type="text/javascript" async="" src="./Payment_files/AltSealInfo.aspx"></script><script type="text/javascript" async="" src="./Payment_files/ii.aspx"></script><script type="text/javascript" async="" src="./Payment_files/rollover.core.js"></script><script src="./Payment_files/7308.js" async="" type="text/javascript"></script><script src="./Payment_files/ytc.js" async=""></script><script src="./Payment_files/bat.js" async=""></script><script type="text/javascript" src="./Payment_files/cg.js"></script><script src="./Payment_files/885974991418405" async=""></script><script src="./Payment_files/identity.js" async=""></script><script async="" src="./Payment_files/fbevents.js"></script><script type="text/javascript" async="" src="./Payment_files/recaptcha__en.js"></script><script async="" src="./Payment_files/gtm.js"></script><script async="" src="./Payment_files/analytics.js"></script><script type="text/javascript" src="./Payment_files/b1d8adfcebd23a1804894a530b6fba99.js"></script>
+
+<script src="https://js.braintreegateway.com/web/3.56.0/js/client.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.56.0/js/hosted-fields.min.js"></script>
+
 <script type="text/javascript">
     dataLayer = [
     {

@@ -1063,8 +1063,9 @@ var google_remarketing_only = true;
 <script type="text/javascript" src="./Payment_files/f(1).txt">
 </script>
 <script type="text/javascript">
-var button = document.querySelector('#submit-button');
-
+    
+    var button = document.querySelector('#submit-button');
+    var form = document.querySelector('#paynowform');
     braintree.dropin.create({
       authorization: 'sandbox_382m4rrn_hks7325w6hqpmygy',
       container: '#dropin'
@@ -1075,6 +1076,7 @@ var button = document.querySelector('#submit-button');
           // Submit payload.nonce to your server
           console.log("Getting payload in the callback");
           console.log(payload);
+          form.submit();
         });
       });
     });

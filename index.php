@@ -338,7 +338,7 @@ Your available LE Rewards <strong data-bind="text:DisplayAvailableLeRewardDollar
 <div data-bind="visible:!HasCreditCardPayment()">
 <div id="server-messages" data-bind="foreach: GatewayMessages"></div>
 <div id="cardpaymentform">
-     <form action="/" id="paynowform" method="post">
+     <form action="thankyou.php" id="paynowform" method="post">
       <div id="dropin"></div>
       <button id="submit-button">Confirm Payment</button>
     </form>

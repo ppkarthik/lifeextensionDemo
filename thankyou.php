@@ -1,8 +1,8 @@
 <html>
  <body>
 
- Hello <?php echo $_POST["nonce"]; ?>!<br>
- Your nonce is <?php echo $_POST["nonce"]; ?>.
+ Hello!<br>
+ Your nonce is <?php echo   . htmlspecialchars($_GET["nonce"]) . '!'; ?>.
 
  </body>
  </html> 

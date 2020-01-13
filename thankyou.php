@@ -21,7 +21,7 @@ if (isset($_GET['nonce'])) {
        
     if ($result->success || !is_null($result->transaction)) {
     $transaction = $result->transaction; 
-    print("Thank you for your order. Payment went through succcessfully."); 
+    print("Thank you for your order. Payment went through succcessfully.\n"); 
     print($transaction);
     }
 

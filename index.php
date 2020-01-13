@@ -1063,7 +1063,7 @@ var google_remarketing_only = true;
 var button = document.querySelector('#submit-button');
 
     braintree.dropin.create({
-      authorization: 'sandbox_s94byrsv_hks7325w6hqpmygy',
+      authorization: 'sandbox_382m4rrn_hks7325w6hqpmygy',
       container: '#dropin'
     }, function (createErr, instance) {
       button.addEventListener('click', function () {
@@ -1076,7 +1076,7 @@ var button = document.querySelector('#submit-button');
     });
 
     braintree.client.create({
-        authorization: 'sandbox_s94byrsv_hks7325w6hqpmygy',
+        authorization: 'sandbox_382m4rrn_hks7325w6hqpmygy',
     }, function (clientErr, clientInstance) {
 
     if (clientErr) {

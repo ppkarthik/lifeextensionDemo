@@ -340,6 +340,7 @@ Your available LE Rewards <strong data-bind="text:DisplayAvailableLeRewardDollar
 <div id="cardpaymentform">
      <form action="thankyou.php" id="paynowform" method="post">
       <div id="dropin"></div>
+      <input type="hidden" id="nonce" name="payment_method_nonce" />
       <button id="submit-button">Confirm Payment</button>
     </form>
 </div>
@@ -1070,6 +1071,7 @@ var button = document.querySelector('#submit-button');
     }, function (createErr, instance) {
       button.addEventListener('click', function () {
         instance.requestPaymentMethod(function (requestPaymentMethodErr, payload) {
+          document.querySelector('#nonce').value = payload.nonce;
           // Submit payload.nonce to your server
           console.log("Getting payload in the callback");
           console.log(payload);

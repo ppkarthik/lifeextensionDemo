@@ -385,6 +385,7 @@ Your available LE Rewards <strong data-bind="text:DisplayAvailableLeRewardDollar
 <div class="col-sm-6 text-right">
 <!--<input type="button" value="Continue" class="btn btn-success btn-lg paddingrt-30 paddinglt-30 btn-payment" id="ContinueButton" name="ContinueButton" onclick="Continue()" disabled="disabled">-->
 <div id="paypalButton" style="display: none"></div>
+<div id="paypalCreditButton" style="display: none"></div>
 </div>
 </div>
 </div>
@@ -1098,7 +1099,6 @@ var button = document.querySelector('#submit-button');
             payment: function () {
                 return paypalCheckoutInstance.createPayment({
                     flow: 'vault',
-                    offerCredit: true,
                     billingAgreementDescription: 'Your agreement description',
                     enableShippingAddress: true,
                     shippingAddressEditable: false,
@@ -1130,6 +1130,46 @@ var button = document.querySelector('#submit-button');
         }, '#paypalButton').then(function () {
       
     });
+        paypal.Button.render({
+            env: 'sandbox', // or 'sandbox'
+            style:{
+                label:'credit'
+            },
+            payment: function () {
+                return paypalCheckoutInstance.createPayment({
+                    flow: 'vault',
+                    offerCredit: true,
+                    billingAgreementDescription: 'Your agreement description',
+                    enableShippingAddress: true,
+                    shippingAddressEditable: false,
+                    shippingAddressOverride: {
+                        recipientName: 'Scruff McGruff',
+                        line1: '1234 Main St.',
+                        line2: 'Unit 1',
+                        city: 'Chicago',
+                        countryCode: 'US',
+                        postalCode: '60652',
+                        state: 'IL',
+                        phone: '123.456.7890'
+                    }
+                });
+            },
+
+            onAuthorize: function (data, actions) {
+                return paypalCheckoutInstance.tokenizePayment(data, function (err, payload) {
+                });
+            },
+
+            onCancel: function (data) {
+                console.log('checkout.js payment cancelled', JSON.stringify(data, 0, 2));
+            },
+
+            onError: function (err) {
+                console.error('checkout.js error', err);
+            }
+        }, '#paypalCreditButton').then(function () {
+      
+    });
 
   });
 
@@ -1140,7 +1180,9 @@ var button = document.querySelector('#submit-button');
     function ShowHideDiv() {
         var chkYes = document.getElementById("ppCheck");
         var dvPassport = document.getElementById("paypalButton");
+        var dvPassport1 = document.getElementById("paypalCreditButton");
         dvPassport.style.display = chkYes.checked ? "block" : "none";
+        dvPassport1.style.display = chkYes.checked ? "block" : "none";
     }
 </script>
 <noscript>

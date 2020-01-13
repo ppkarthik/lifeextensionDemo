@@ -22,6 +22,8 @@ $clientToken = $gateway->clientToken()->generate();
 <script src="https://js.braintreegateway.com/web/3.56.0/js/client.min.js"></script>
 <script src="https://js.braintreegateway.com/web/3.56.0/js/hosted-fields.min.js"></script>
 <script src="https://js.braintreegateway.com/web/dropin/1.21.0/js/dropin.min.js"></script>
+<script src="https://www.paypalobjects.com/api/checkout.js" data-version-4 log-level="warn"></script>
+<script src="https://js.braintreegateway.com/web/3.56.0/js/paypal-checkout.min.js"></script>
 <script type="text/javascript">
     dataLayer = [
     {
@@ -296,7 +298,7 @@ Your available LE Rewards <strong data-bind="text:DisplayAvailableLeRewardDollar
 <div>
 <div class="radio">
 <label class="pt-2">
-<input type="radio" data-bind="value: &#39;NCC&#39;, checked: SelectedPaymentValue,click: paymentMethodChange.bind($data, &#39;NCC&#39;)" name="PaymentMethodSelection" value="NCC">
+<input type="radio" id="radioDCC" onclick="ShowHideDiv()" data-bind="value: &#39;NCC&#39;, checked: SelectedPaymentValue,click: paymentMethodChange.bind($data, &#39;NCC&#39;)" name="PaymentMethodSelection" value="NCC">
 <img alt="Payment Options" src="./Payment_files/dccpayment.png" height="30" width="220" style="margin-top: -8px;">
 </label>
 </div>
@@ -304,7 +306,7 @@ Your available LE Rewards <strong data-bind="text:DisplayAvailableLeRewardDollar
 <div>
 <div class="radio">
 <label class="pt-2" data-bind="visible: HasPaypalOption">
-<input type="radio" id="ppCheck" data-bind="value: &#39;PP&#39;, checked: SelectedPaymentValue,click: paymentMethodChange.bind($data, &#39;PP&#39;)" name="PaymentMethodSelection" value="PP">
+<input type="radio" id="ppCheck" onclick="ShowHideDiv()" data-bind="value: &#39;PP&#39;, checked: SelectedPaymentValue,click: paymentMethodChange.bind($data, &#39;PP&#39;)" name="PaymentMethodSelection" value="PP">
 <img alt="Paypal" src="./Payment_files/paypal-logo.webp" style="margin-top: -8px;">
 </label>
 </div>
@@ -381,7 +383,8 @@ Your available LE Rewards <strong data-bind="text:DisplayAvailableLeRewardDollar
 </span>
 </div>
 <div class="col-sm-6 text-right">
-<input type="button" value="Continue" class="btn btn-success btn-lg paddingrt-30 paddinglt-30 btn-payment" id="ContinueButton" name="ContinueButton" onclick="Continue()" disabled="disabled">
+<!--<input type="button" value="Continue" class="btn btn-success btn-lg paddingrt-30 paddinglt-30 btn-payment" id="ContinueButton" name="ContinueButton" onclick="Continue()" disabled="disabled">-->
+<div id="paypalButton" style="display: none"></div>
 </div>
 </div>
 </div>
@@ -1070,7 +1073,74 @@ var button = document.querySelector('#submit-button');
         });
       });
     });
+
+    braintree.client.create({
+        authorization: 'sandbox_s94byrsv_hks7325w6hqpmygy',
+    }, function (clientErr, clientInstance) {
+
+    if (clientErr) {
+        console.error('Error creating client:', clientErr);
+        return;
+    }
+
+    braintree.paypalCheckout.create({
+        client: clientInstance
+    }, function (paypalCheckoutErr, paypalCheckoutInstance) {
+
+        if (paypalCheckoutErr) {
+            console.error('Error creating PayPal Checkout:', paypalCheckoutErr);
+            return;
+        }
         
+        paypal.Button.render({
+            env: 'sandbox', // or 'sandbox'
+
+            payment: function () {
+                return paypalCheckoutInstance.createPayment({
+                    flow: 'vault',
+                    billingAgreementDescription: 'Your agreement description',
+                    enableShippingAddress: true,
+                    shippingAddressEditable: false,
+                    shippingAddressOverride: {
+                        recipientName: 'Scruff McGruff',
+                        line1: '1234 Main St.',
+                        line2: 'Unit 1',
+                        city: 'Chicago',
+                        countryCode: 'US',
+                        postalCode: '60652',
+                        state: 'IL',
+                        phone: '123.456.7890'
+                    }
+                });
+            },
+
+            onAuthorize: function (data, actions) {
+                return paypalCheckoutInstance.tokenizePayment(data, function (err, payload) {
+                });
+            },
+
+            onCancel: function (data) {
+                console.log('checkout.js payment cancelled', JSON.stringify(data, 0, 2));
+            },
+
+            onError: function (err) {
+                console.error('checkout.js error', err);
+            }
+        }, '#paypalButton').then(function () {
+      
+    });
+
+  });
+
+});
+        
+</script>
+<script type="text/javascript">
+    function ShowHideDiv() {
+        var chkYes = document.getElementById("ppCheck");
+        var dvPassport = document.getElementById("paypalButton");
+        dvPassport.style.display = chkYes.checked ? "block" : "none";
+    }
 </script>
 <noscript>
 <div style="display:inline;">

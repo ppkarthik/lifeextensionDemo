@@ -1102,6 +1102,7 @@ var google_remarketing_only = true;
         paypal.Button.render({
             env: 'sandbox', // or 'sandbox'
             style:{
+                size:'medium',
                 tagline:false
             },
             payment: function () {
@@ -1142,6 +1143,7 @@ var google_remarketing_only = true;
             env: 'sandbox', // or 'sandbox'
             style:{
                 label:'credit',
+                size:'medium',
                 tagline:false
             },
             payment: function () {

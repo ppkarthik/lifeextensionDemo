@@ -387,7 +387,6 @@ Your available LE Rewards <strong data-bind="text:DisplayAvailableLeRewardDollar
 <!--<input type="button" value="Continue" class="btn btn-success btn-lg paddingrt-30 paddinglt-30 btn-payment" id="ContinueButton" name="ContinueButton" onclick="Continue()" disabled="disabled">-->
 <div id="paypalButton" style="display: none"></div>
     <br>
-    <br>
 <div id="paypalCreditButton" style="display: none"></div>
 </div>
 </div>

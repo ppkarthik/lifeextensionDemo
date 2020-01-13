@@ -1098,6 +1098,7 @@ var button = document.querySelector('#submit-button');
             payment: function () {
                 return paypalCheckoutInstance.createPayment({
                     flow: 'vault',
+                    offerCredit: true,
                     billingAgreementDescription: 'Your agreement description',
                     enableShippingAddress: true,
                     shippingAddressEditable: false,

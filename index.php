@@ -1095,7 +1095,9 @@ var button = document.querySelector('#submit-button');
         
         paypal.Button.render({
             env: 'sandbox', // or 'sandbox'
-
+            style:{
+                tagline:false
+            },
             payment: function () {
                 return paypalCheckoutInstance.createPayment({
                     flow: 'vault',
@@ -1133,7 +1135,8 @@ var button = document.querySelector('#submit-button');
         paypal.Button.render({
             env: 'sandbox', // or 'sandbox'
             style:{
-                label:'credit'
+                label:'credit',
+                tagline:false
             },
             payment: function () {
                 return paypalCheckoutInstance.createPayment({

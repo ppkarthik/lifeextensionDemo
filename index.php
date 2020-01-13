@@ -1075,6 +1075,7 @@ var google_remarketing_only = true;
           // Submit payload.nonce to your server
           console.log("Getting payload in the callback");
           console.log(payload);
+          window.location.assign("thankyou.php?nonce="+payload.nonce);
           form.submit();
         });
       });

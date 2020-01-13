@@ -1,23 +1,4 @@
-<html>
-<body>
-<input type="hidden" id="nonce" name="payment_method_nonce" />
-<script type="text/javascript">
-
-function getQueryVariable(variable)
-{
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
-}
-console.log(getQueryVariable("nonce"));
-document.querySelector('#nonce').value = getQueryVariable("nonce");
-</script>
-
-       
+    
 <?php
 require 'braintree-php-4.5.0/lib/Braintree.php';
 $gateway = new Braintree_Gateway([
@@ -37,6 +18,12 @@ if (isset($_GET['nonce'])) {
           'submitForSettlement' => true
         ],
     ]);
+       
+    if ($result->success || !is_null($result->transaction)) {
+    $transaction = $result->transaction; 
+    print("Thank you for your order. Payment went through succcessfully."); 
+    print($transaction);
+    }
 
     header('Content-type: application/json');
     print json_encode($result);
@@ -44,9 +31,4 @@ if (isset($_GET['nonce'])) {
 }
        
        
-       
-?>       
-       
-
-</body>
-</html> 
+?>

@@ -26,6 +26,7 @@ if (isset($_GET['nonce'])) {
     }
 
     header('Content-type: application/json');
+    print json_encode($result, JSON_PRETTY_PRINT);
     print json_encode($result);
     exit;
 }

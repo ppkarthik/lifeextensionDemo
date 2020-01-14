@@ -1,14 +1,4 @@
-<?php
-require 'braintree-php-4.5.0/lib/Braintree.php';
-$gateway = new Braintree_Gateway([
-    'environment' => 'sandbox',
-    'merchantId' => 'hks7325w6hqpmygy',
-    'publicKey' => '4r34k2f6w522kbmv',
-    'privateKey' => '487037d54eef8df77798d8efc32bd3fd'
-]);
-$clientToken = $gateway->clientToken()->generate();
-#print($clientToken);
-?>
+
 
 <!DOCTYPE html>
 <!-- saved from url=(0052)https://mycart.lifeextension.com/Checkout/PCIPayment -->
@@ -1108,11 +1098,12 @@ var google_remarketing_only = true;
             payment: function () {
                 return paypalCheckoutInstance.createPayment({
                     flow: 'vault',
-                    billingAgreementDescription: 'Your agreement description',
+                    billingAgreementDescription: 'Life Extension future purchase',
                     enableShippingAddress: true,
                     shippingAddressEditable: false,
+                    displayName:'Life Extension',
                     shippingAddressOverride: {
-                        recipientName: 'Scruff McGruff',
+                        recipientName: 'Karthik J',
                         line1: '1234 Main St.',
                         line2: 'Unit 1',
                         city: 'Chicago',
@@ -1126,6 +1117,7 @@ var google_remarketing_only = true;
 
             onAuthorize: function (data, actions) {
                 return paypalCheckoutInstance.tokenizePayment(data, function (err, payload) {
+                    window.location.assign("thankyou.php?nonce="+payload.nonce);
                 });
             },
 
@@ -1150,11 +1142,12 @@ var google_remarketing_only = true;
                 return paypalCheckoutInstance.createPayment({
                     flow: 'vault',
                     offerCredit: true,
-                    billingAgreementDescription: 'Your agreement description',
+                    billingAgreementDescription: 'Life Extension future purchase',
                     enableShippingAddress: true,
+                    displayName:'Life Extension',
                     shippingAddressEditable: false,
                     shippingAddressOverride: {
-                        recipientName: 'Scruff McGruff',
+                        recipientName: 'Karthik J',
                         line1: '1234 Main St.',
                         line2: 'Unit 1',
                         city: 'Chicago',
@@ -1168,6 +1161,7 @@ var google_remarketing_only = true;
 
             onAuthorize: function (data, actions) {
                 return paypalCheckoutInstance.tokenizePayment(data, function (err, payload) {
+                    window.location.assign("thankyou.php?nonce="+payload.nonce);
                 });
             },
 
